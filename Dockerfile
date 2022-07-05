@@ -6,22 +6,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     ca-certificates \
     gnupg \
+    ffmpeg \
     libsm6 \
     libxext6 \
     libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Miniconda
-RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh && \
-    chmod +x ./miniconda.sh && \
-    ./miniconda.sh -b -p /opt/conda && \
-    rm miniconda.sh
+RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh \ 
+    && chmod +x ./miniconda.sh \
+    && ./miniconda.sh -b -p /opt/conda \
+    && rm ./miniconda.sh
 
 ENV PATH /opt/conda/bin:$PATH
 ENV CONDA_PREFIX=/opt/conda
 ENV PATH=$CONDA_PREFIX/bin:$PATH
 
-RUN git -C ~/ clone https://github.com/ikinsella/trefide.git \
+RUN git -C ~/ clone https://github.com/mtorkashvand/trefide.git \
     && cd ~/trefide \
     && /opt/conda/bin/conda env update -n root -f environments/devel.yml \
     && /opt/conda/bin/conda clean -fya
