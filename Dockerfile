@@ -10,6 +10,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsm6 \
     libxext6 \
     libxrender-dev \
+    gcc \
+	libglib2.0-0 \
+	libxrender1 \
+	libfontconfig1 \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Miniconda
