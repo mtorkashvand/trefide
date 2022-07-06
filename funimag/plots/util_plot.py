@@ -61,7 +61,7 @@ def colorbar(mappable,
     #    cbar.set_ticks(list(map(int, cbar.get_ticks())))
 
     if cbar_ticks is None:
-        cbar_ticks = cbar.get_clim()
+        cbar_ticks = cbar.mappable.get_clim()
     if cbar_ticks_number is not None:
         cbar_ticks=np.linspace(min(cbar_ticks),
                                max(cbar_ticks),
