@@ -6,8 +6,7 @@ from multiprocess_median import multiprocess_median
 import logging as l
 logger = l.getLogger(__name__)
 #from run_pipeline import print_mat_info
-from trefide.qfunctions.utils import print_mat_info
-# from utils import print_mat_info, dump_args
+from qfunctions.utils import print_mat_info
 
 def subtract_mean_projection(mov):
     """

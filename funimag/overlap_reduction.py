@@ -1,8 +1,7 @@
 import numpy as np
 import scipy as sp
 
-from trefide.funimag.plots import overlap_graph
-# from . import overlap_graph
+from funimag import overlap_graph
 
 
 def difference_operator(len_signal):

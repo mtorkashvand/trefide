@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.patches as patches
 # from . import util_plot
-from trefide.funimag.plots import util_plot
+from funimag.plots import util_plot
 
 
 def trace_characteristics(ax,

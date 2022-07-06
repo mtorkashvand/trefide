@@ -8,9 +8,9 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 
 # from .. import utils
-from trefide.funimag import utils
+from funimag.utils import noise_level
 # from .. import superpixel_analysis as sup
-from trefide.funimag import superpixel_analysis as sup
+from funimag import superpixel_analysis as sup
 
 
 # TODO
@@ -212,7 +212,7 @@ def comparison_metric(array,
 
         elif option=='snr':
             Cn1 = array.std(2)
-            Cn2 = utils.noise_level(array)
+            Cn2 = noise_level(array)
             Cn = Cn1/Cn2
             title_prefix = 'SNR: '
         else:
@@ -513,7 +513,7 @@ def correlation_pnr(Y,
     # compute peak-to-noise ratio
     Y = Y - Y.mean(2, keepdims=True)
     data_max = Y.max(2)
-    data_std = utils.noise_level(Y)
+    data_std = noise_level(Y)
     # compute PNR image
     pnr = np.divide(data_max, data_std)
 

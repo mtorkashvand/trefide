@@ -4,8 +4,7 @@ import numpy as np
 import os
 import funimag.superpixel_analysis as sup
 
-from trefide.qfunctions.utils import print_begin_end
-# from utils import print_begin_end
+from qfunctions.utils import print_begin_end
 
 @print_begin_end
 def make_cell_masks_and_traces(A, C, raw_movie, figdir): 

@@ -6,9 +6,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 import numpy as np
 # import os
 
-# import utils
-from trefide.qfunctions.utils import print_begin_end
-# from utils import print_begin_end
+from qfunctions.utils import print_begin_end
 
 def correlation_image(Y):
     """

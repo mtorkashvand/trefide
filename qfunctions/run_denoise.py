@@ -24,11 +24,10 @@ from trefide.reformat import overlapping_component_reformat
 from functools import wraps
 
 
-from trefide.qfunctions.make_denoise_figures import make_detrending_pixel_traces, make_preprocess_avg_images, make_pixel_histograms, make_correlation_images, make_denoising_avg_images
-from trefide.qfunctions import utils
-# import utils
-from trefide.qfunctions.preprocess import simple_detrend, fix_tsub_movie_length
-from trefide.qfunctions.utils import load_movie_matlab, load_movie_stim, print_begin_end, dump_args
+from qfunctions.make_denoise_figures import make_detrending_pixel_traces, make_preprocess_avg_images, make_pixel_histograms, make_correlation_images, make_denoising_avg_images
+from qfunctions import utils
+from qfunctions.preprocess import simple_detrend, fix_tsub_movie_length
+from qfunctions.utils import load_movie_matlab, load_movie_stim, print_begin_end, dump_args
 # load_movie_stim is written expecting a previous step producing a single mat file with 'inputData' and 'stim' fields
 # load_movie_matlab is written for when this code gets from a Segment_*.m file inside qstate pipeline
 

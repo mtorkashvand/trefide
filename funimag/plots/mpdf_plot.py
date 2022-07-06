@@ -4,7 +4,7 @@ import matplotlib.gridspec as gridspec
 import numpy as np
 
 # from . import mpdf_data
-from trefide.funimag.plots import mpdf_data
+from funimag.plots import mpdf_data
 # from ..plots import util_plot
 
 def pdf_write(Y,Yd,

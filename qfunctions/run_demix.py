@@ -17,14 +17,10 @@ import scipy.sparse
 import os
 import time
 
-import trefide.funimag.superpixel_analysis as sup
-# import funimag.superpixel_analysis as sup
-from trefide.qfunctions.utils import setup_logging, print_mat_info, load_movie_stim, print_begin_end, dump_args
-# import utils
-# from utils import load_movie_matlab, load_movie_stim, print_begin_end, dump_args
+import funimag.superpixel_analysis as sup
+from qfunctions.utils import setup_logging, print_mat_info, load_movie_stim, print_begin_end, dump_args
 
-from trefide.qfunctions.make_demix_figures import make_cell_masks_and_traces, make_superpixel_image
-# import make_demix_figures
+from qfunctions.make_demix_figures import make_cell_masks_and_traces, make_superpixel_image
 
 # TODO - what's the right way to put this in separate utils file, and still have it accept an open filehandle arg?
 # Can make another layer of nesting to accept an arg, but that filehandle needs to be opened here (for the correct path),
