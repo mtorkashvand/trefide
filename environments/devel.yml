@@ -19,7 +19,7 @@ dependencies:
       - cvxpy
       - hdf5storage
       - networkx
-      - prompt-toolkit==1.0.15
+      - prompt-toolkit # was prompt-toolkit==1.0.15
       - scipy
       - scikit-image
       - scs==2.1.0
