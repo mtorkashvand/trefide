@@ -1,4 +1,29 @@
-# TreFiDe - Trend Filter Denoising
+## Getting Started
+
+1- Install docker, and setup it up for 'Windows Subsystem for Linux 2' or wsl2. [link](https://docs.docker.com/desktop/windows/wsl/)  
+2- Clone this repository to the directory of choice:
+```
+git clone https://github.com/mtorkashvand/trefide.git
+```  
+3- Build the docker image:
+```
+cd trefide
+docker build -t trefide .
+```  
+4- Test the image by running demos provided by the authors:
+```
+docker run -it -p 34000:34000 trefide
+```
+This runs a docker container from the `trefide` docker image. Copy the line highlighted in yellow in the screenshot below and paste it in the browser of
+your choice. Test demos in `funimag_demo` and `trefide_demo` folders to confirm this image behaves as advertised.  
+
+<p align="center">
+  <img width="750" height="375" src="https://user-images.githubusercontent.com/31863323/178042162-b8fca5dc-ac42-47fd-94a1-a25589a5efe8.PNG">
+</p>
+
+
+
+## Notes from the master branch
 
 TreFiDe is the software package accompanying the research publication
 ["Penalized matrix decomposition for denoising, compression, and improved
@@ -23,85 +48,6 @@ data and voltage imaging data in the context of optogenetic stimulation. In
 both cases, we show that our new approach leads to faster and much more robust
 extraction of activity from the video data.
 
-## Getting Started
-
-### Docker
-
-1. `docker run -it -p 34000:34000 paninski/trefide:1.2`
-
-2. `localhost:34000` (in a browser of your choise)
-
-### Build from source
-
-#### Prerequisites
-
-- [Anaconda](https://docs.anaconda.com/anaconda/install/) or
-  [Miniconda](https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/)
-
-- Linux (this package was developed & tested on Ubuntu 18.04, Ubuntu 20.04, and Manjaro)
-
-*Note: these instructions will assume that you clone the repo into your home
-directory*
-
-1. Clone the repository
-
-```Bash
-git clone git@github.com:ikinsella/trefide.git
-```
-
-2. Navigate into the trefide repo you just cloned:
-```Bash
-cd ~/trefide
-```
-
-3. Create the conda environment using the provided config:
-```Bash
-conda env create -f environments/devel.yml
-```
-
-4. Activate the conda environment:
-```Bash
-conda activate trefide_devel
-```
-
-5. Compile the underlying source code (written in C++) by running
-```Bash
-make all -j $(nproc)
-```
-
-6. Compile the Cython extensions and install the trefide library:
-```Bash
-pip install .
-```
-
-### Try it out!
-
-1. Execute PMD demo code using a sample dataset:
-```Bash
-cd ~/trefide
-jupyter notebook demos/Matrix_Decomposition/Demo_PMD_Compression_Denoising.ipynb --no-browser --port=34000
-```
-
-The aforementioned notebook automatically downloads the sample dataset on your
-behalf. If you wish to manually download the sample dataset, it is available
-[here](https://drive.google.com/file/d/1v8E61-mKwyGNVPQFrLabsLsjA-l6D21E/view?usp=sharing).
-
-### Rebuilding & Modification
-If you modify or pull updates this package will need to be rebuilt for the
-changes to take effect. This can be done as follows:
-
-```Bash
-make clean && make all -j $(nproc) && pip uninstall trefide -y && pip install .
-```
-
-### Uninstalling
-If you wish to remove the entire project from your machine, you can run:
-
-```Bash
-conda deactivate trefide_devel
-conda remove --name trefide_devel --all
-rm -rf ~/trefide
-```
 
 ## References
 ```
@@ -117,7 +63,3 @@ rm -rf ~/trefide
     journal = {bioRxiv}
 }
 ```
-
-## Troubleshooting
-
-- [slack channel](https://join.slack.com/t/trefide/shared_invite/enQtMzc5NDM4MDk4OTgxLWE0NjNhZGE5N2VlMTcxNGEwODhkMmFlMjcyYmIzYTdkOGVkYThhNjdkMzEyZmM1NzIzYzc0NTZkYmVjMDY5ZTg)
