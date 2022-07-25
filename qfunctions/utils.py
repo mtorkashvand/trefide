@@ -11,7 +11,8 @@ def load_movie_matlab(infile):
     indir = os.path.join(os.sep, 'input') # Hard-coded input directory
     infile = os.path.join(indir, infile)
     with h5py.File(infile, 'r') as f:
-        movie = np.ascontiguousarray(f['movie3D'].value.transpose([2,1,0])).astype('double')
+        # movie = np.ascontiguousarray(f['movie3D'].value.transpose([2,1,0])).astype('double')
+        movie = np.ascontiguousarray(f['movie3D'].transpose([2,1,0])).astype('double')
         print_mat_info(movie=movie)
         l.info("done loading movie")
         return movie
@@ -21,7 +22,8 @@ def load_movie_stim(infile, tiny_mode=False):
     indir = os.path.join(os.sep, 'input') # Hard-coded input directory
     infile = os.path.join(indir, infile)
     with h5py.File(infile, 'r') as f:
-        movie = np.ascontiguousarray(f['inputData'].value.transpose([2,1,0])).astype('double')
+        # movie = np.ascontiguousarray(f['inputData'].value.transpose([2,1,0])).astype('double')
+        movie = np.ascontiguousarray(f['inputData'].transpose([2,1,0])).astype('double')
         stim = np.ascontiguousarray(f['stim']).squeeze().astype('double')
         print_mat_info(movie=movie, stim=stim)
         l.info("done loading movie")
